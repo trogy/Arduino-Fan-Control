@@ -11,7 +11,7 @@ DallasTemperature sensors(&oneWire);
 
 void setup(void)
 {
-  sensors.begin();  // Start up the library
+  sensors.begin();
   pinMode(RELAY_PIN, OUTPUT);
   Serial.begin(9600);
   Serial.print("Temp Setpoint:");
@@ -21,10 +21,7 @@ void setup(void)
 
 void loop(void)
 { 
-  // Send the command to get temperatures
   sensors.requestTemperatures(); 
-
-  //print the temperature in Celsius
   Serial.print("Temperature: ");
   Serial.print(sensors.getTempCByIndex(0));
   Serial.print(" C");
